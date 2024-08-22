@@ -1,0 +1,501 @@
+* {
+  font-family: "Almarai", sans-serif;
+  transition: all 0.05s;
+}
+:root {
+  --linear: linear-gradient(
+    180deg,
+    rgba(226, 226, 226, 0.05) 0%,
+    rgba(214, 214, 214, 0.15) 57%,
+    rgba(144, 144, 154, 0.2) 100%
+  );
+  --linear-blue: linear-gradient(
+    135deg,
+    rgba(64, 221, 255, 1) 0%,
+    rgba(20, 186, 227, 1) 19%,
+    rgba(19, 177, 230, 1) 69%,
+    rgba(17, 170, 223, 1) 82%,
+    rgba(11, 152, 197, 1) 100%
+  );
+  --linear-red: linear-gradient(
+    180deg,
+    rgba(255, 64, 154, 1) 0%,
+    rgba(196, 56, 239, 1) 100%
+  );
+  --radial-dark: radial-gradient(
+    circle,
+    rgba(32, 29, 71, 1) 0%,
+    rgba(23, 21, 58, 1) 100%
+  );
+  --linear-dark: linear-gradient(
+    180deg,
+    rgba(38, 34, 80, 0.65) 0%,
+    rgba(27, 25, 66, 0.85) 57%,
+    rgba(23, 22, 59, 1) 100%
+  );
+  --linear-dark2: linear-gradient(
+    180deg,
+    rgba(91, 90, 153, 1) 0%,
+    rgba(56, 56, 92, 1) 100%
+  );
+  --linear-danger: linear-gradient(
+    180deg,
+    rgba(255, 64, 64, 1) 0%,
+    rgba(168, 43, 43, 1) 100%
+  );
+  --main-color: #53b9ea;
+  --second-color: #2c285a;
+  /* --third-color: #5b5a99; */
+  --third-color: #a6a5c4;
+  --old-third-color: #5b5a99;
+  --linear-3: linear-gradient(
+    45deg,
+    rgba(69, 175, 238, 0.7) 0%,
+    rgba(67, 177, 236, 0.75) 4%,
+    rgba(65, 179, 233, 0.8) 8%,
+    rgba(62, 183, 229, 1) 15%,
+    rgba(35, 219, 189, 1) 75%,
+    rgba(30, 224, 183, 0.85) 84%,
+    rgba(28, 228, 179, 0.8) 90%,
+    rgba(27, 229, 177, 0.75) 93%,
+    rgba(23, 234, 172, 0.7) 100%
+  );
+}
+
+/* ============= GENERAL =============== */
+
+/*
+ * BreadCramb
+ */
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: FontAwesome;
+  content: "\f053";
+}
+.breadcrumb-item.active span {
+  color: var(--second-color);
+}
+.breadcrumb-item:not(.active) {
+  transition: color 0.4s;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.navbar .form-control {
+  padding: 0.75rem 1rem;
+}
+
+/*
+ * Sidebar
+ */
+
+@media (min-width: 768px) {
+  .sidebar .offcanvas-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+  }
+  .navbar-search {
+    display: block;
+  }
+}
+.sidebar {
+  position: fixed;
+  height: 100vh;
+}
+.offcanvas-body::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+.offcanvas-body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+}
+
+.sidebar .nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+}
+
+.sidebar .nav-item a.nav-link {
+  font-size: 16px;
+}
+/* sidebar Items */
+
+.btn-toggle {
+  /* padding: 0.25rem 0.5rem; */
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  cursor: pointer;
+}
+
+.btn-toggle::after {
+  font-family: FontAwesome;
+  width: 1.25em;
+  line-height: 0;
+  content: "\f078";
+  font-size: 14px;
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btn-toggle-top::after {
+  font-family: FontAwesome;
+  width: 1.25em;
+  line-height: 0;
+  content: "\f077";
+  font-size: 14px;
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"]::after,
+.btn-toggle-top[aria-expanded="true"]::after {
+  transform: rotate(-180deg) translateX(-25%);
+}
+
+.btn-toggle-nav a {
+  padding: 0.1875rem 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 1.25rem;
+}
+
+/* ====================== */
+/* Main */
+/* ====================== */
+main .title-top .addDep button,
+main .title-top .addDep a {
+  background: var(--linear-blue);
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  color: white;
+}
+main .title-top .exportfile button {
+  background-size: 200% 200%;
+  background-position: top right;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+}
+main .title-top .exportfile p small {
+  font-size: 10px;
+}
+main .title-top .back a {
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+main .navs .row .counter > div {
+  /* color: white; */
+  background-size: 100% 100%;
+}
+
+main table.table tr td {
+  vertical-align: middle;
+}
+main table.table tr > * {
+  background-color: transparent;
+}
+
+/* Tasks */
+main table.table tbody .taskActive {
+  background-color: #c1dbff;
+  color: #0764e6;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+main table.table tbody .taskPause {
+  background-color: #fff8e7;
+  color: #d5b500;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+main table.table tbody .taskStop {
+  border-radius: 6px;
+  padding: 8px 24px;
+  background-color: #ffe5ee;
+  color: #aa0000;
+}
+
+/* Listing Pages */
+main .list-row .addNew a,
+.tab-pane .add {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+main .list-row .searchINP input {
+  border-radius: 10px;
+}
+main .list-row .filterBTN .btn {
+  border-radius: 10px;
+}
+main .action a.btn,
+main .action button.btn {
+  color: white;
+}
+main .list-row .pagination li a {
+  border: none;
+  border-radius: 6px;
+}
+main .list-row .pagination li:first-child a,
+main .list-row .pagination li:last-child a {
+  border: none;
+}
+
+main .list-row .pagination .page-link:focus,
+main .list-row .pagination .page-link:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+main .list-row select {
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+}
+main .list-row select:focus-visible {
+  outline: none;
+}
+
+/* adding Pages */
+
+main .add-row .card .card-body input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+main
+  .add-row
+  .card
+  .card-body
+  label.input-group-text:has(+ input[type="file"]):hover {
+  cursor: pointer;
+}
+main .add-row .card .card-body input,
+main .add-row .card .card-body select,
+main .add-row .card .card-body textarea {
+  border-width: 2px;
+  border-radius: 10px;
+}
+main .add-row .card .card-body input:focus,
+main .add-row .card .card-body input:focus-visible,
+main .add-row .card .card-body textarea:focus,
+main .add-row .card .card-body textarea:focus-visible,
+main .add-row .card .card-body select:focus,
+main .add-row .card .card-body select:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+main .add-row .card .card-body input[type="radio"] + label {
+  border-radius: 12px;
+  padding: 8px 32px;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+main .add-row .card .card-body input[type="radio"] + label:hover {
+  cursor: pointer;
+}
+
+main .add-row .card .card-body .form-group button {
+  background: var(--linear-blue);
+  color: white;
+  background-repeat: no-repeat;
+  background-position: top right;
+  border-radius: 10px;
+}
+main .add-row .card .card-body .form-group button.btn:disabled {
+  border-color: transparent;
+}
+main .add-row .card .card-body .form-group button + a.btn {
+  border-color: var(--main-color);
+  border-radius: 10px;
+  padding: 7px 64px;
+}
+main
+  .add-row
+  .card
+  .card-body
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  /* opacity: 0; */
+  /* width: 35%; */
+  color: rgba(255, 255, 255, 0);
+}
+
+main .add-row .action a.btn,
+main .add-row .action button.btn {
+  border-radius: 10px;
+}
+
+main .add-row .card .card-body .documentPreview span {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+main .add-row .card .card-body .documentPreview img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+main .add-row .card .card-body ul.depDescription {
+  padding: 18px 16px;
+  /* padding-bottom: 5px; */
+  border-radius: 8px;
+}
+
+main .add-row .card .card-body ul.depDescription li {
+  margin-right: 20px;
+}
+
+main .add-row .card .card-body ul.depDescription li:has(> input) {
+  margin-right: 5px;
+  list-style-type: none;
+  width: 100%;
+}
+
+main .add-row .card .card-body ul li input {
+  line-height: 2;
+  width: 100%;
+  border: none;
+}
+main .add-row .card .card-body ul input:focus,
+main .add-row .card .card-body ul input:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Notification */
+#notification .card .notification-item .card .card-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Login */
+#login form .form-group input:not([type="checkbox"]) {
+  border-radius: 10px;
+  border-radius: 10px;
+}
+#login form .form-group button {
+  border-radius: 10px;
+}
+/* ======================= */
+/* dark/light theme */
+/* ======================= */
+div.btn-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+div.btn-container label {
+  font-size: 13px;
+  color: white;
+  font-weight: 100;
+}
+
+.btn-color-mode-switch {
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner {
+  margin: 0px;
+  width: 170px;
+  height: 50px;
+  background: #050036;
+  border: 1px solid var(--third-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+}
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:hover {
+  cursor: pointer;
+}
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+  font-family: FontAwesome;
+  content: "\f186  Dark";
+  position: absolute;
+  font-size: 12px;
+  font-weight: 100;
+  top: 7px;
+  right: 20px;
+  padding: 20px 0px;
+  transform: translateY(-20%);
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+  font-family: FontAwesome;
+  content: "\f185  Light";
+  font-size: 12px;
+  width: 85px;
+  background: #53b9ea;
+  border-radius: 10px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 6px -2px #111;
+  padding: 20px 0px;
+  transform: translateY(-5%);
+}
+
+.btn-color-mode-switch input[type="checkbox"] {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  margin: 0px;
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner {
+  background: #050036;
+  color: #fff;
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:after {
+  content: "\f186  Dark";
+  font-size: 12px;
+  left: 85px;
+  background: #53b9ea;
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:before {
+  content: "\f185  Light";
+  font-size: 12px;
+  right: auto;
+  left: 10px;
+}
