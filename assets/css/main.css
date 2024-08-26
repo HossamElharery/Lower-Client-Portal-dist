@@ -218,6 +218,24 @@ main table.table tr > * {
 }
 
 /* Tasks */
+main table.table tbody .inProgress {
+  background-color: #c1dbff;
+  color: #0764e6;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+main table.table tbody .pending {
+  background-color: #fff8e7;
+  color: #a38b00;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+main table.table tbody .completed {
+  background-color: #ddfadc;
+  color: #05a300;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
 main table.table tbody .taskActive {
   background-color: #c1dbff;
   color: #0764e6;
