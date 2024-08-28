@@ -337,7 +337,8 @@ main .add-row .card .card-body input[type="radio"] + label:hover {
 }
 
 main .add-row .card .card-body .form-group button {
-  background: var(--linear-blue);
+
+  background-color: #17bce5;
   color: white;
   background-repeat: no-repeat;
   background-position: top right;
