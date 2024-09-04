@@ -179,6 +179,12 @@ main .list-row .action a.showAll {
   color: var(--second-color);
   border-color: var(--second-color);
 }
+main .action a.add,
+main .list-row .action a.add {
+  background: #5aa9bb;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
 main .action a.get,
 main .list-row .action a.get {
   background: var(--linear-blue);
